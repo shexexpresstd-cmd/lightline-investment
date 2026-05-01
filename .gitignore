@@ -6,3 +6,4 @@ media/
 screenshots/
 *.py
 !app.py
+!blueprints/*.py
