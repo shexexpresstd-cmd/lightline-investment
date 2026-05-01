@@ -1,0 +1,10 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "CFE Training Centre" %}{% set primary_color = "#1a4a4a" %}{% set primary_dark = "#0f3333" %}{% set primary_light = "#256060" %}{% set accent_color = "#3a8a7a" %}{% set accent_light = "#5aae9a" %}{% set route_prefix = "cfe" %}{% set services_link = "programs" %}{% set services_label = "Programs" %}{% set company_description = "Center for Excellence — Empowering professionals with world-class training and development." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-cfe.png" %}
+{% block title %}Programs - CFE Training Centre{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Our Programs</h1><p data-aos="fade-up" data-aos-delay="100">Comprehensive training programs designed for professional growth.</p></div></section>
+<section class="section section-dark"><div class="container"><div class="grid-3">
+    {% for s in [("Leadership & Management","crown","Executive leadership and management development programs."),("Digital Skills","laptop","Data science, AI, and cybersecurity training."),("Finance & Accounting","chart-line","Financial analysis and investment training."),("Engineering & Technical","hard-hat","Professional engineering certifications."),("Soft Skills","comments","Communication, negotiation, teamwork."),("Compliance & Risk","shield-alt","Regulatory compliance training.")] %}
+    <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(26,188,156,0.1);color:#1abc9c;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+</div></div></section>
+{% endblock %}

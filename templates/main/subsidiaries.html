@@ -1,0 +1,58 @@
+{% extends "main/base.html" %}
+{% block title %}Subsidiaries{% endblock %}
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <span class="section-tag" data-aos="fade-up">Our Companies</span>
+        <h1 data-aos="fade-up" data-aos-delay="100">Lightline Subsidiaries</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Five specialized companies operating under the Lightline umbrella — each a leader in its field.</p>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <div class="container">
+        <div class="subsidiaries-grid" style="grid-template-columns:repeat(2, 1fr);max-width:900px;margin:0 auto;">
+            <a href="/engineering" class="subsidiary-card engineering" data-aos="fade-up">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Lightline Engineering</h3>
+                    <p>Designing and building the infrastructure of tomorrow with cutting-edge engineering solutions, project management, and construction excellence.</p>
+                </div>
+                <div class="card-footer"><span>Visit Site</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/logistics" class="subsidiary-card logistics" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-truck"></i></div>
+                    <h3>Lightline Logistics</h3>
+                    <p>Global supply chain solutions that move goods efficiently across borders with warehousing, freight forwarding, and last-mile delivery.</p>
+                </div>
+                <div class="card-footer"><span>Visit Site</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/capital" class="subsidiary-card capital" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Lightline Capital</h3>
+                    <p>Strategic investment management, private equity, asset management, and financial advisory services for institutional and individual clients.</p>
+                </div>
+                <div class="card-footer"><span>Visit Site</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/research" class="subsidiary-card research" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-flask"></i></div>
+                    <h3>Lightline Research</h3>
+                    <p>Pushing boundaries through market research, data analytics, economic forecasting, and innovation consulting for informed decision-making.</p>
+                </div>
+                <div class="card-footer"><span>Visit Site</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/cfe" class="subsidiary-card cfe" data-aos="fade-up" data-aos-delay="400" style="grid-column:1/3;">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>CFE (Center for Excellence) Training Centre</h3>
+                    <p>Empowering professionals with world-class training, certification programs, leadership development, and continuous education.</p>
+                </div>
+                <div class="card-footer"><span>Visit Site</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

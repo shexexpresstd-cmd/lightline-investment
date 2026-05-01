@@ -1,0 +1,281 @@
+{% extends "main/base.html" %}
+{% block title %}Lightline Investment Group{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge" data-aos="fade-up">
+                <i class="fas fa-building"></i> Parent Company · Diversified Holdings
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="100">
+                Building <span>Excellence</span><br>Across Industries
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200">
+                Lightline Investment Group is a diversified holding company with a portfolio of 
+                world-class subsidiaries spanning engineering, logistics, capital management, 
+                research, and professional training.
+            </p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/subsidiaries" class="btn btn-primary">
+                    Explore Our Companies <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="/contact" class="btn btn-secondary">
+                    Get in Touch <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="stats-grid">
+            {% for stat in stats %}
+            <div class="stat-card counter-section" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="stat-icon"><i class="fas fa-{{ stat.icon }}"></i></div>
+                <div>
+                    <span class="counter-number" data-target="{{ stat.value }}">0</span>
+                    <span class="stat-suffix">{{ stat.suffix }}</span>
+                </div>
+                <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- About Preview -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;">
+            <div data-aos="fade-right">
+                <span class="section-tag">About Us</span>
+                <h2 style="font-size:2.5rem;margin-bottom:20px;">A Legacy of<br>Strategic Growth</h2>
+                <p style="color:var(--gray-400);margin-bottom:24px;line-height:1.8;">
+                    Founded with a vision to create lasting value, Lightline Investment Group has grown 
+                    into a diversified holding company with operations across multiple sectors. Our portfolio 
+                    companies benefit from shared resources, strategic guidance, and a commitment to excellence.
+                </p>
+                <p style="color:var(--gray-400);margin-bottom:30px;line-height:1.8;">
+                    From engineering marvels to cutting-edge research, from global logistics to 
+                    financial expertise, and from professional training to capital management — 
+                    we build, connect, and empower.
+                </p>
+                <a href="/about" class="btn btn-primary">Learn Our Story <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div data-aos="fade-left" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:30px;border:1px solid var(--gray-700);">
+                    <i class="fas fa-hard-hat" style="font-size:2rem;color:#3498db;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Engineering</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Building infrastructure for tomorrow</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:30px;border:1px solid var(--gray-700);">
+                    <i class="fas fa-truck" style="font-size:2rem;color:#27ae60;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Logistics</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Connecting supply chains globally</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:30px;border:1px solid var(--gray-700);">
+                    <i class="fas fa-chart-line" style="font-size:2rem;color:#f39c12;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Capital</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Strategic investment management</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:30px;border:1px solid var(--gray-700);">
+                    <i class="fas fa-flask" style="font-size:2rem;color:#9b59b6;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Research</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Innovation through discovery</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="section section-gray" id="services">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Services</span>
+            <h2>Comprehensive Investment Solutions</h2>
+            <p>Strategic financial services designed to grow and protect your wealth across all market conditions.</p>
+        </div>
+        <div class="grid-3">
+            {% for service in services %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="card-icon"><i class="fas fa-{{ service.icon }}"></i></div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Subsidiaries Showcase -->
+<section class="section section-dark" id="subsidiaries">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Companies</span>
+            <h2>World-Class Subsidiaries</h2>
+            <p>Five specialized companies operating under the Lightline umbrella, each a leader in its field.</p>
+        </div>
+        <div class="subsidiaries-grid">
+            <a href="/engineering" class="subsidiary-card engineering" data-aos="fade-up">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Lightline Engineering</h3>
+                    <p>Designing and building the infrastructure of tomorrow with cutting-edge engineering solutions.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Explore Engineering</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            <a href="/logistics" class="subsidiary-card logistics" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-truck"></i></div>
+                    <h3>Lightline Logistics</h3>
+                    <p>Global supply chain solutions that move goods efficiently across borders and continents.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Explore Logistics</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            <a href="/capital" class="subsidiary-card capital" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Lightline Capital</h3>
+                    <p>Strategic investment and capital management for sustained growth and maximum returns.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Explore Capital</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            <a href="/research" class="subsidiary-card research" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-flask"></i></div>
+                    <h3>Lightline Research</h3>
+                    <p>Pushing the boundaries of innovation through dedicated research and development.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Explore Research</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            <a href="/cfe" class="subsidiary-card cfe" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>CFE Training Centre</h3>
+                    <p>Center for Excellence — Empowering professionals with world-class training and development.</p>
+                </div>
+                <div class="card-footer">
+                    <span>Explore CFE</span>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio -->
+<section class="section section-gray" id="portfolio">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Portfolio</span>
+            <h2>Featured Investments</h2>
+            <p>Explore our diverse portfolio of strategic investments across high-growth sectors.</p>
+        </div>
+        <div class="grid-3">
+            {% for item in portfolio %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}" style="padding:0;overflow:hidden;">
+                <div style="height:220px;background:var(--gray-700);display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                    <img src="{{ item.image_url }}" alt="{{ item.title }}" style="width:100%;height:100%;object-fit:cover;" 
+                         onerror="this.style.display='none'">
+                </div>
+                <div style="padding:25px;">
+                    <span style="display:inline-block;padding:4px 12px;background:rgba(252,163,17,0.1);border-radius:50px;color:var(--accent);font-size:0.75rem;text-transform:uppercase;margin-bottom:12px;">{{ item.category }}</span>
+                    <h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;color:var(--white);">{{ item.title }}</h3>
+                    <p style="color:var(--gray-400);font-size:0.9rem;margin-top:8px;">{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+{% if testimonials %}
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Testimonials</span>
+            <h2>What Our Partners Say</h2>
+        </div>
+        <div class="grid-3">
+            {% for t in testimonials %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div style="color:var(--accent);margin-bottom:16px;">
+                    {% for _ in range(t.rating) %}<i class="fas fa-star"></i>{% endfor %}
+                </div>
+                <p style="color:var(--gray-300);font-style:italic;margin-bottom:20px;line-height:1.7;">"{{ t.quote }}"</p>
+                <div>
+                    <p style="color:var(--white);font-weight:600;">{{ t.name }}</p>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">{{ t.role }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Team -->
+{% if team %}
+<section class="section section-gray">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Leadership</span>
+            <h2>Our Executive Team</h2>
+            <p>Meet the experienced leaders driving our vision forward.</p>
+        </div>
+        <div class="grid-4">
+            {% for member in team %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}" style="text-align:center;">
+                <div style="width:100px;height:100px;border-radius:50%;background:var(--gray-700);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                    <i class="fas fa-user-tie" style="font-size:2.5rem;color:var(--gray-500);"></i>
+                </div>
+                <h3 style="font-family:'Poppins',sans-serif;font-size:1rem;">{{ member.name }}</h3>
+                <p style="color:var(--accent);font-size:0.85rem;">{{ member.role }}</p>
+                <p style="color:var(--gray-400);font-size:0.85rem;margin-top:8px;">{{ member.bio[:80] }}{% if member.bio|length > 80 %}...{% endif %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+<section class="section" style="background:var(--gradient-hero);text-align:center;">
+    <div class="container">
+        <div data-aos="fade-up">
+            <h2 style="font-size:2.8rem;color:var(--white);margin-bottom:16px;">Ready to Partner<br>with Us?</h2>
+            <p style="color:var(--gray-400);font-size:1.1rem;max-width:600px;margin:0 auto 40px;">
+                Whether you're looking to invest, collaborate, or join our team — we'd love to hear from you.
+            </p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="/contact" class="btn btn-primary">Contact Us Today <i class="fas fa-arrow-right"></i></a>
+                <a href="/subsidiaries" class="btn btn-secondary">Explore Subsidiaries <i class="fas fa-building"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

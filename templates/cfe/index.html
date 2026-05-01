@@ -1,0 +1,40 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "CFE Training Centre" %}{% set primary_color = "#1a4a4a" %}{% set primary_dark = "#0f3333" %}{% set primary_light = "#256060" %}{% set accent_color = "#3a8a7a" %}{% set accent_light = "#5aae9a" %}{% set route_prefix = "cfe" %}{% set services_link = "programs" %}{% set services_label = "Programs" %}{% set company_description = "Center for Excellence — Empowering professionals with world-class training and development." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-cfe.png" %}
+{% block title %}CFE Training Centre{% endblock %}
+{% block content %}
+<section class="hero-sub">
+    <div style="position:absolute;inset:0;overflow:hidden;"><div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);top:-10%;right:-5%;animation:float 20s infinite ease-in-out;"></div></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="hero-content"><div class="hero-badge" data-aos="fade-up"><i class="fas fa-graduation-cap"></i> Center for Excellence</div>
+            <h1 data-aos="fade-up" data-aos-delay="100"><span style="background:linear-gradient(135deg,#1abc9c,#76d7c4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Empower</span><br>Your Potential</h1>
+            <p data-aos="fade-up" data-aos-delay="200">World-class professional training, certification programs, and leadership development to elevate careers and transform organizations.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/cfe/programs" class="btn btn-sub-primary">View Programs <i class="fas fa-arrow-right"></i></a>
+                <a href="/cfe/contact" class="btn btn-secondary">Enroll Now <i class="fas fa-user-plus"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container"><div class="grid-2" style="align-items:center;">
+        <div data-aos="fade-right"><span class="section-tag">Why CFE</span><h2 style="font-size:2.2rem;margin-bottom:20px;">Transform Your<br>Career Today</h2><p style="color:var(--gray-400);margin-bottom:16px;line-height:1.8;">The Center for Excellence delivers high-impact training programs designed by industry experts. From professional certifications to leadership development, we equip you with the skills to succeed.</p></div>
+        <div class="grid-2" data-aos="fade-left" style="gap:16px;">
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-certificate" style="font-size:2rem;color:#1abc9c;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Certifications</h4><p style="color:var(--gray-400);font-size:0.85rem;">Industry-recognized</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-users" style="font-size:2rem;color:#1abc9c;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Workshops</h4><p style="color:var(--gray-400);font-size:0.85rem;">Hand-on learning</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-laptop" style="font-size:2rem;color:#1abc9c;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Online</h4><p style="color:var(--gray-400);font-size:0.85rem;">Flexible learning</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-chalkboard-teacher" style="font-size:2rem;color:#1abc9c;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Corporate</h4><p style="color:var(--gray-400);font-size:0.85rem;">Team training</p></div>
+        </div>
+    </div></div>
+</section>
+<section class="section section-dark">
+    <div class="container"><div class="section-header"><span class="section-tag">Programs</span><h2>Our Training Categories</h2></div>
+        <div class="grid-3">
+            {% for s in [("Leadership","crown","Executive leadership and management development programs."),("Digital Skills","laptop","Data science, AI, cybersecurity & digital transformation."),("Finance","chart-line","Financial analysis, accounting, and investment training."),("Engineering","hard-hat","Technical and professional engineering certifications."),("Soft Skills","comments","Communication, negotiation, and team collaboration."),("Compliance","shield-alt","Regulatory compliance and risk management training.")] %}
+            <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(26,188,156,0.1);color:#1abc9c;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section" style="background:linear-gradient(135deg,#0e6655,#1abc9c);text-align:center;">
+    <div class="container"><div data-aos="fade-up"><h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Invest in Your Future</h2><p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Start your learning journey with CFE today.</p><a href="/cfe/contact" class="btn btn-sub-primary">Enroll Today <i class="fas fa-arrow-right"></i></a></div></div>
+</section>
+{% endblock %}

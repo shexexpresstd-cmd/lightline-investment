@@ -1,0 +1,122 @@
+<svg viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Color gradients matching reference -->
+        <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f6a24a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#e8954d;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="wine" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#b44968;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#9a3d5a;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="mauve-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#c997d4;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#b887c4;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="mauve-2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#a57cb8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#936ca5;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="slate" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#7a6c9d;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6a5c8d;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="navy" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4d5f8c;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#3d4f7c;stop-opacity:1" />
+        </linearGradient>
+        
+        <linearGradient id="blue-section" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#4fa5d5;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2b7fb8;stop-opacity:1" />
+        </linearGradient>
+        
+        <radialGradient id="sphere-light" cx="35%" cy="35%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.5" />
+            <stop offset="70%" style="stop-color:#ffffff;stop-opacity:0" />
+        </radialGradient>
+    </defs>
+    
+    <!-- Base light gray sphere -->
+    <circle cx="200" cy="120" r="75" fill="#e8e8e8"/>
+    
+    <!-- Curved stripe layers from left -->
+    <!-- Orange stripe (leftmost) -->
+    <path d="M 128 75 Q 138 62 148 75 Q 158 62 168 75 Q 178 62 188 75 Q 193 68 197 75
+             L 197 92 Q 193 85 188 92 Q 178 79 168 92 Q 158 79 148 92 Q 138 79 128 92 Z" 
+          fill="url(#orange)"/>
+    
+    <!-- Wine/burgundy stripe -->
+    <path d="M 130 92 Q 140 79 150 92 Q 160 79 170 92 Q 180 79 190 92 Q 194 86 197 92
+             L 197 109 Q 194 103 190 109 Q 180 96 170 109 Q 160 96 150 109 Q 140 96 130 109 Z" 
+          fill="url(#wine)"/>
+    
+    <!-- Light mauve stripe -->
+    <path d="M 133 109 Q 143 96 153 109 Q 163 96 173 109 Q 183 96 192 109 Q 195 104 197 109
+             L 197 126 Q 195 121 192 126 Q 183 113 173 126 Q 163 113 153 126 Q 143 113 133 126 Z" 
+          fill="url(#mauve-1)"/>
+    
+    <!-- Darker mauve stripe -->
+    <path d="M 136 126 Q 146 113 156 126 Q 166 113 176 126 Q 186 113 194 126 Q 196 122 197 126
+             L 197 143 Q 196 139 194 143 Q 186 130 176 143 Q 166 130 156 143 Q 146 130 136 143 Z" 
+          fill="url(#mauve-2)"/>
+    
+    <!-- Slate purple stripe -->
+    <path d="M 140 143 Q 150 130 160 143 Q 170 130 180 143 Q 188 133 195 143
+             L 197 157 Q 190 148 183 157 Q 173 146 163 157 Q 153 146 143 157 Z" 
+          fill="url(#slate)"/>
+    
+    <!-- Navy bottom stripe -->
+    <path d="M 145 157 Q 155 146 165 157 Q 175 146 185 157 Q 191 150 197 157
+             L 197 168 Q 193 161 187 168 Q 177 159 167 168 Q 157 159 147 168 Z" 
+          fill="url(#navy)"/>
+    
+    <!-- Blue quarter section (right side) -->
+    <path d="M 200 45 A 75 75 0 0 1 275 120 L 200 120 Z" 
+          fill="url(#blue-section)"/>
+    
+    <!-- Star in blue section -->
+    <g transform="translate(242, 75)">
+        <!-- Main 8-pointed star -->
+        <path d="M 0 -12 L 1.5 -3.5 L 10 -3 L 3.5 1.5 L 5 10 L 0 5 L -5 10 L -3.5 1.5 L -10 -3 L -1.5 -3.5 Z" 
+              fill="white" 
+              opacity="0.95"/>
+        <!-- Diagonal points -->
+        <path d="M 7 -7 L 4 -4 M -7 -7 L -4 -4 M 7 7 L 4 4 M -7 7 L -4 4" 
+              stroke="white" 
+              stroke-width="2" 
+              opacity="0.8"
+              stroke-linecap="round"/>
+        <!-- Center glow -->
+        <circle cx="0" cy="0" r="2" fill="white"/>
+    </g>
+    
+    <!-- Top highlight for 3D sphere effect -->
+    <ellipse cx="175" cy="95" rx="40" ry="28" fill="url(#sphere-light)"/>
+    
+    <!-- Subtle bottom shadow -->
+    <ellipse cx="200" cy="200" rx="55" ry="6" fill="#000000" opacity="0.08"/>
+    
+    <!-- LIGHTLINE text -->
+    <text x="200" y="285" 
+          font-family="Arial, sans-serif" 
+          font-size="54" 
+          font-weight="700" 
+          text-anchor="middle" 
+          fill="#1a1a1a"
+          letter-spacing="-0.5">LIGHTLINE</text>
+    
+    <!-- INVESTMENTS text -->
+    <text x="200" y="318" 
+          font-family="Arial, sans-serif" 
+          font-size="18" 
+          font-weight="500"
+          text-anchor="middle" 
+          fill="#4a4a4a"
+          letter-spacing="2.5">INVESTMENTS</text>
+</svg>

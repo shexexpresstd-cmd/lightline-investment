@@ -1,0 +1,27 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Logistics" %}{% set primary_color = "#2c3e6b" %}{% set primary_dark = "#1a2444" %}{% set primary_light = "#3d5090" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "logistics" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Global supply chain solutions." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-logistics.png" %}
+{% block title %}Contact - Lightline Logistics{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Contact Logistics</h1><p data-aos="fade-up" data-aos-delay="100">Get a free logistics consultation and quote.</p></div></section>
+<section class="section section-dark">
+    <div class="container"><div class="grid-2" style="gap:50px;">
+        <div data-aos="fade-right"><h2 style="font-size:1.8rem;margin-bottom:24px;">Get a Quick Quote</h2><p style="color:var(--gray-400);margin-bottom:30px;">Tell us about your shipping needs and we'll get back to you within 2 hours.</p>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(39,174,96,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-map-marker-alt" style="color:#27ae60;"></i></div><div><p style="color:var(--white);">Jebel Ali Free Zone, Dubai</p></div></div>
+                <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(39,174,96,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#27ae60;"></i></div><div><p style="color:var(--white);">+971 4 000 2000</p></div></div>
+                <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(39,174,96,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-envelope" style="color:#27ae60;"></i></div><div><p style="color:var(--white);">logistics@lightline.ae</p></div></div>
+            </div>
+        </div>
+        <div data-aos="fade-left">
+            <form class="contact-form" action="/api/contact" method="POST" style="background:var(--gray-800);padding:35px;border-radius:var(--border-radius-lg);border:1px solid var(--gray-700);">
+                <h3 style="color:var(--white);margin-bottom:20px;">Request Quote</h3>
+                <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+                <div class="form-group"><input type="text" name="subject" placeholder="Shipping Type (Air/Sea/Land)"></div>
+                <div class="form-group"><textarea name="message" placeholder="Describe your shipping requirements" required></textarea></div>
+                <button type="submit" class="btn btn-sub-primary submit-btn" style="width:100%;justify-content:center;">Get Quote <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div></div>
+</section>
+{% endblock %}

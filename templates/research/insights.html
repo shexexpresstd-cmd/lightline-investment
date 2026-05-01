@@ -1,0 +1,10 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Research" %}{% set primary_color = "#2d2450" %}{% set primary_dark = "#1a1435" %}{% set primary_light = "#453a70" %}{% set accent_color = "#8b7aaf" %}{% set accent_light = "#a898c4" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Innovation through discovery." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
+{% block title %}Insights - Lightline Research{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Our Insights</h1><p data-aos="fade-up" data-aos-delay="100">Thought leadership, research reports, and industry analysis.</p></div></section>
+<section class="section section-dark"><div class="container"><div class="grid-3">
+    {% for s in [("Market Research","chart-bar","In-depth industry analysis and competitive intelligence."),("Data Analytics","database","Advanced statistical modeling and visualization."),("AI & Machine Learning","brain","Custom ML models for predictive analytics."),("Economic Forecasting","chart-line","Macroeconomic analysis and predictions."),("Innovation Consulting","lightbulb","Strategic innovation frameworks and R&D support."),("Consumer Insights","users","Consumer behavior analysis and segmentation.")] %}
+    <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(155,89,182,0.1);color:#9b59b6;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+</div></div></section>
+{% endblock %}

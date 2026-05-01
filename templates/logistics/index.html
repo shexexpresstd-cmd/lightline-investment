@@ -1,0 +1,59 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Logistics" %}{% set primary_color = "#2c3e6b" %}{% set primary_dark = "#1a2444" %}{% set primary_light = "#3d5090" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "logistics" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Global supply chain solutions that move goods efficiently across borders and continents." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-logistics.png" %}
+{% block title %}Lightline Logistics{% endblock %}
+{% block content %}
+<section class="hero-sub">
+    <div style="position:absolute;inset:0;overflow:hidden;"><div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);top:-10%;right:-5%;animation:float 20s infinite ease-in-out;"></div></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="hero-content"><div class="hero-badge" data-aos="fade-up"><i class="fas fa-truck"></i> Global Logistics</div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Connecting<br><span style="background:linear-gradient(135deg,#27ae60,#82e0aa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Supply Chains</span> Worldwide</h1>
+            <p data-aos="fade-up" data-aos-delay="200">End-to-end logistics solutions including freight forwarding, warehousing, supply chain management, and last-mile delivery across the globe.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/logistics/services" class="btn btn-sub-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+                <a href="/logistics/contact" class="btn btn-secondary">Get a Quote <i class="fas fa-file-invoice"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;">
+            <div data-aos="fade-right">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 style="font-size:2.2rem;margin-bottom:20px;">Logistics<br>That Delivers</h2>
+                <p style="color:var(--gray-400);margin-bottom:16px;line-height:1.8;">Lightline Logistics provides comprehensive supply chain solutions, leveraging strategic partnerships and advanced tracking technology to ensure your cargo arrives safely and on time.</p>
+            </div>
+            <div class="grid-2" data-aos="fade-left" style="gap:16px;">
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-ship" style="font-size:2rem;color:#27ae60;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Sea Freight</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Full & less than container load</p></div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-plane" style="font-size:2rem;color:#27ae60;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Air Freight</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Express & economy shipping</p></div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-truck" style="font-size:2rem;color:#27ae60;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Land Freight</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">GCC & regional transport</p></div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-warehouse" style="font-size:2rem;color:#27ae60;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Warehousing</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Storage & distribution</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-dark">
+    <div class="container"><div class="section-header"><span class="section-tag">Services</span><h2>Our Logistics Solutions</h2></div>
+        <div class="grid-3">
+            {% for s in [("Sea Freight","ship","FCL & LCL shipping to major ports worldwide with competitive rates."),("Air Freight","plane","Fast, reliable air cargo services for time-sensitive shipments."),("Land Freight","truck","Cross-border road transport across the GCC and Middle East."),("Warehousing","warehouse","Secure storage facilities with inventory management systems."),("Supply Chain","cogs","End-to-end supply chain consulting and optimization."),("Last Mile","home","Final delivery solutions for e-commerce and retail.")] %}
+            <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(39,174,96,0.1);color:#27ae60;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section" style="background:linear-gradient(135deg,#1e8449,#27ae60);text-align:center;">
+    <div class="container"><div data-aos="fade-up"><h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Need a Logistics Partner?</h2><p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Let's optimize your supply chain for efficiency and cost savings.</p><a href="/logistics/contact" class="btn btn-sub-primary">Get Started <i class="fas fa-arrow-right"></i></a></div></div>
+</section>
+{% endblock %}

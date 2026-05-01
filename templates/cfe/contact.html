@@ -1,0 +1,40 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "CFE Training Centre" %}{% set primary_color = "#1a4a4a" %}{% set primary_dark = "#0f3333" %}{% set primary_light = "#256060" %}{% set accent_color = "#3a8a7a" %}{% set accent_light = "#5aae9a" %}{% set route_prefix = "cfe" %}{% set services_link = "programs" %}{% set services_label = "Programs" %}{% set company_description = "Center for Excellence — Empowering professionals with world-class training and development." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-cfe.png" %}
+{% block title %}Contact - CFE Training Centre{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Contact CFE</h1><p data-aos="fade-up" data-aos-delay="100">Ready to start your learning journey? Get in touch with our team.</p></div></section>
+<section class="section section-dark"><div class="container"><div class="grid-2" style="gap:50px;">
+    <div data-aos="fade-right">
+        <h2 style="font-size:1.8rem;margin-bottom:24px;">Get in Touch</h2>
+        <p style="color:var(--gray-400);margin-bottom:30px;">Our team is ready to help you find the perfect training program for your career goals.</p>
+        
+        <!-- Director Card -->
+        <div style="background:linear-gradient(135deg,#0e6655,#1abc9c);border-radius:var(--border-radius);padding:25px;margin-bottom:25px;">
+            <h3 style="color:var(--white);font-size:1.1rem;margin-bottom:12px;">Director, Admin & Operations</h3>
+            <p style="color:var(--white);font-weight:600;font-size:1.05rem;">James S. Mukabi</p>
+            <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;">
+                <div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-phone" style="color:rgba(255,255,255,0.8);width:16px;"></i><span style="color:rgba(255,255,255,0.9);">+254 722 314 967</span></div>
+                <div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-envelope" style="color:rgba(255,255,255,0.8);width:16px;"></i><span style="color:rgba(255,255,255,0.9);">info@lightlinetrainingcentre.org</span></div>
+                <div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-envelope" style="color:rgba(255,255,255,0.8);width:16px;"></i><span style="color:rgba(255,255,255,0.9);">james@ideallightline.com</span></div>
+                <div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-globe" style="color:rgba(255,255,255,0.8);width:16px;"></i><a href="https://www.lightlinetrainingcentre.org" target="_blank" style="color:rgba(255,255,255,0.9);">www.lightlinetrainingcentre.org</a></div>
+            </div>
+        </div>
+        
+        <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(26,188,156,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-map-marker-alt" style="color:#1abc9c;"></i></div><div><p style="color:var(--white);">Nairobi, Kenya</p><p style="color:var(--gray-400);font-size:0.85rem;">East Africa Regional Office</p></div></div>
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(26,188,156,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#1abc9c;"></i></div><div><p style="color:var(--white);">+254 722 314 967</p></div></div>
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(26,188,156,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-envelope" style="color:#1abc9c;"></i></div><div><p style="color:var(--white);">info@lightlinetrainingcentre.org</p></div></div>
+        </div>
+    </div>
+    <div data-aos="fade-left">
+        <form class="contact-form" action="/api/contact" method="POST" style="background:var(--gray-800);padding:35px;border-radius:var(--border-radius-lg);border:1px solid var(--gray-700);">
+            <h3 style="color:var(--white);margin-bottom:20px;">Send Us a Message</h3>
+            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+            <div class="form-group"><input type="text" name="subject" placeholder="Program of Interest"></div>
+            <div class="form-group"><textarea name="message" placeholder="Tell us about your training needs" required></textarea></div>
+            <button type="submit" class="btn btn-sub-primary submit-btn" style="width:100%;justify-content:center;">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</div></div></section>
+{% endblock %}

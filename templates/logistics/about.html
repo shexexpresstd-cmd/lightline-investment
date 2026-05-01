@@ -1,0 +1,20 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Logistics" %}{% set primary_color = "#2c3e6b" %}{% set primary_dark = "#1a2444" %}{% set primary_light = "#3d5090" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "logistics" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Global supply chain solutions." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-logistics.png" %}
+{% block title %}About - Lightline Logistics{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">About Lightline Logistics</h1><p data-aos="fade-up" data-aos-delay="100">Your trusted partner in global logistics and supply chain solutions.</p></div></section>
+<section class="section section-dark">
+    <div class="container"><div class="grid-2" style="align-items:center;">
+        <div data-aos="fade-right"><span class="section-tag">Who We Are</span><h2 style="font-size:2rem;margin-bottom:20px;">Moving Business<br>Forward</h2><p style="color:var(--gray-400);line-height:1.8;">Lightline Logistics provides end-to-end logistics solutions with a presence in 15 countries. Our network of strategic partnerships and advanced tracking systems ensures complete visibility and control over your supply chain.</p></div>
+        <div style="background:linear-gradient(135deg,#1e8449,#27ae60);border-radius:var(--border-radius-lg);padding:40px;" data-aos="fade-left">
+            <h3 style="color:var(--white);margin-bottom:24px;">By The Numbers</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">15</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Countries</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">10K+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Shipments/Year</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">500K</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Sqm Warehouse</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">99.5%</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">On-Time Rate</p></div>
+            </div>
+        </div>
+    </div></div>
+</section>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Engineering" %}{% set logo_file = "logo-engineering.png" %}
+{% set primary_color = "#1a3a5c" %}{% set primary_dark = "#0e2440" %}{% set primary_light = "#2a5a8c" %}{% set accent_color = "#4fa5d5" %}{% set accent_light = "#85c1e9" %}{% set route_prefix = "engineering" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Designing and building the infrastructure of tomorrow." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}
+{% block title %}About - Lightline Engineering{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">About Lightline Engineering</h1><p data-aos="fade-up" data-aos-delay="100">A legacy of engineering excellence and innovation since 2010.</p></div></section>
+<section class="section section-dark">
+    <div class="container"><div class="grid-2" style="align-items:center;">
+        <div data-aos="fade-right">
+            <span class="section-tag">Who We Are</span>
+            <h2 style="font-size:2rem;margin-bottom:20px;">Engineering<br>Excellence, Delivered</h2>
+            <p style="color:var(--gray-400);margin-bottom:16px;line-height:1.8;">Lightline Engineering is a full-service engineering and construction company serving the UAE and the broader Middle East. We specialize in delivering complex infrastructure projects on time and within budget.</p>
+            <p style="color:var(--gray-400);line-height:1.8;">With a team of over 200 engineers, architects, and project managers, we have successfully delivered 500+ projects across civil, structural, and MEP disciplines.</p>
+        </div>
+        <div style="background:linear-gradient(135deg,#1a5276,#2980b9);border-radius:var(--border-radius-lg);padding:40px;" data-aos="fade-left">
+            <h3 style="color:var(--white);margin-bottom:24px;">Key Facts</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">200+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Professionals</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">500+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Projects</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">15+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Years Experience</p></div>
+                <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">98%</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">On-Time Delivery</p></div>
+            </div>
+        </div>
+    </div></div>
+</section>
+{% endblock %}

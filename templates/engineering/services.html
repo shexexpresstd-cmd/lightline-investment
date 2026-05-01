@@ -1,0 +1,19 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Engineering" %}{% set primary_color = "#1a3a5c" %}{% set primary_dark = "#0e2440" %}{% set primary_light = "#2a5a8c" %}{% set accent_color = "#4fa5d5" %}{% set accent_light = "#85c1e9" %}{% set route_prefix = "engineering" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Designing and building the infrastructure of tomorrow." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-engineering.png" %}
+{% block title %}Services - Lightline Engineering{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Our Engineering Services</h1><p data-aos="fade-up" data-aos-delay="100">Comprehensive engineering solutions from concept to completion.</p></div></section>
+<section class="section section-dark">
+    <div class="container">
+        <div class="grid-3">
+            {% for s in [("Civil Engineering","city","Infrastructure, roads, bridges, and large-scale civil works."),("Structural Engineering","home","Building structures from high-rises to industrial facilities."),("MEP Services","bolt","Mechanical, electrical, and plumbing design & installation."),("Project Management","hard-hat","Planning, scheduling, cost control, and quality assurance."),("Sustainable Design","leaf","Eco-friendly and energy-efficient solutions."),("Feasibility Studies","ruler-combined","Technical assessments and cost-benefit analysis.")] %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-{{ s[1] }}"></i></div>
+                <h3>{{ s[0] }}</h3>
+                <p>{{ s[2] }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Lightline Investment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f3f4f6; }
+        
+        .sidebar { position: fixed; left: 0; top: 0; width: 260px; height: 100vh; background: #0a2463; color: white; padding: 30px 20px; }
+        .sidebar-logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 700; margin-bottom: 40px; }
+        .sidebar-logo .icon { width: 45px; height: 45px; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0f0f0f; }
+        .nav-links { list-style: none; }
+        .nav-links li { margin-bottom: 8px; }
+        .nav-links a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; color: #d1d5db; text-decoration: none; border-radius: 10px; transition: 0.3s; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: white; }
+        .nav-links a i { width: 20px; }
+        .sidebar-footer { position: absolute; bottom: 20px; left: 20px; right: 20px; }
+        .sidebar-footer a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; color: #d1d5db; text-decoration: none; border-radius: 10px; }
+        .sidebar-footer a:hover { background: rgba(255,255,255,0.1); color: white; }
+
+        .main-content { margin-left: 260px; padding: 30px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .header h1 { font-size: 1.8rem; color: #0f0f0f; }
+        .header .user { display: flex; align-items: center; gap: 15px; }
+        .header .user img { width: 45px; height: 45px; border-radius: 50%; }
+        .header .user-name { font-weight: 500; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 30px; }
+        .stat-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .stat-card .icon { width: 55px; height: 55px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 15px; }
+        .stat-card .icon.blue { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .stat-card .icon.green { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .stat-card .icon.orange { background: rgba(252, 163, 17, 0.1); color: #fca311; }
+        .stat-card .icon.purple { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
+        .stat-card .number { font-size: 2rem; font-weight: 700; color: #0f0f0f; margin-bottom: 5px; }
+        .stat-card .label { color: #6b7280; font-size: 14px; }
+
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #e5e7eb; }
+        .card-header h2 { font-size: 1.2rem; color: #0f0f0f; }
+        .card-header a { color: #3b82f6; text-decoration: none; font-size: 14px; font-weight: 500; }
+
+        .table { width: 100%; border-collapse: collapse; }
+        .table th, .table td { padding: 15px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .table th { color: #6b7280; font-weight: 500; font-size: 14px; }
+        .table td { font-size: 14px; color: #374151; }
+        .status { display: inline-block; padding: 4px 12px; border-radius: 50px; font-size: 12px; font-weight: 500; }
+        .status.new { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .status.read { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
+        .table tr:hover { background: #f9fafb; }
+
+        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .action-btn { display: flex; align-items: center; gap: 12px; padding: 20px; background: #f9fafb; border-radius: 12px; text-decoration: none; color: #374151; transition: 0.3s; font-weight: 500; }
+        .action-btn:hover { background: #f3f4f6; transform: translateY(-2px); }
+        .action-btn i { width: 40px; height: 40px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #0a2463; }
+
+        @media (max-width: 1200px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; } .stats-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <span>Lightline</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/admin/dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="/admin/contacts"><i class="fas fa-envelope"></i> Contacts</a></li>
+            <li><a href="/admin/services"><i class="fas fa-briefcase"></i> Services</a></li>
+            <li><a href="/admin/portfolio"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+            <li><a href="/admin/subscribers"><i class="fas fa-users"></i> Subscribers</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="/"><i class="fas fa-external-link-alt"></i> View Website</a>
+            <a href="/admin/login"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <div class="user">
+                <span class="user-name">Admin</span>
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Admin">
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon blue"><i class="fas fa-envelope"></i></div>
+                <div class="number">{{ new_contacts }}</div>
+                <div class="label">New Messages</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon green"><i class="fas fa-check-circle"></i></div>
+                <div class="number">{{ total_contacts }}</div>
+                <div class="label">Total Contacts</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon orange"><i class="fas fa-users"></i></div>
+                <div class="number">{{ total_subscribers }}</div>
+                <div class="label">Subscribers</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon purple"><i class="fas fa-chart-pie"></i></div>
+                <div class="number">{{ active_portfolio }}</div>
+                <div class="label">Portfolio Items</div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card" style="margin-bottom: 30px;">
+            <div class="card-header">
+                <h2><i class="fas fa-bolt" style="color: #fca311;"></i> Quick Actions</h2>
+            </div>
+            <div class="quick-actions">
+                <a href="/admin/services" class="action-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Service</span>
+                </a>
+                <a href="/admin/portfolio" class="action-btn">
+                    <i class="fas fa-plus"></i>
+                    <span>Add Portfolio</span>
+                </a>
+                <a href="/admin/contacts" class="action-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span>View Messages</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Recent Contacts -->
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="fas fa-clock" style="color: #3b82f6;"></i> Recent Contacts</h2>
+                <a href="/admin/contacts">View All</a>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in recent_contacts %}
+                    <tr>
+                        <td>{{ contact.name }}</td>
+                        <td>{{ contact.email }}</td>
+                        <td>{{ contact.subject or 'N/A' }}</td>
+                        <td><span class="status {{ contact.status }}">{{ contact.status }}</span></td>
+                        <td>{{ contact.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% if not recent_contacts %}
+                    <tr><td colspan="5" style="text-align: center; color: #9ca3af;">No contacts yet</td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

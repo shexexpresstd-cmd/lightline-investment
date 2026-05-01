@@ -1,0 +1,25 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Research" %}{% set primary_color = "#2d2450" %}{% set primary_dark = "#1a1435" %}{% set primary_light = "#453a70" %}{% set accent_color = "#8b7aaf" %}{% set accent_light = "#a898c4" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Innovation through discovery." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
+{% block title %}Contact - Lightline Research{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Contact Research</h1><p data-aos="fade-up" data-aos-delay="100">Partner with us for data-driven insights and innovation.</p></div></section>
+<section class="section section-dark"><div class="container"><div class="grid-2" style="gap:50px;">
+    <div data-aos="fade-right"><h2 style="font-size:1.8rem;margin-bottom:24px;">Let's Collaborate</h2><p style="color:var(--gray-400);margin-bottom:30px;">Have a research challenge? Our team is ready to help.</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(155,89,182,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-map-marker-alt" style="color:#9b59b6;"></i></div><div><p style="color:var(--white);">Dubai Science Park</p></div></div>
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(155,89,182,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-phone" style="color:#9b59b6;"></i></div><div><p style="color:var(--white);">+971 4 000 4000</p></div></div>
+            <div style="display:flex;gap:12px;"><div style="width:45px;height:45px;border-radius:10px;background:rgba(155,89,182,0.1);display:flex;align-items:center;justify-content:center;"><i class="fas fa-envelope" style="color:#9b59b6;"></i></div><div><p style="color:var(--white);">research@lightline.ae</p></div></div>
+        </div>
+    </div>
+    <div data-aos="fade-left">
+        <form class="contact-form" action="/api/contact" method="POST" style="background:var(--gray-800);padding:35px;border-radius:var(--border-radius-lg);border:1px solid var(--gray-700);">
+            <h3 style="color:var(--white);margin-bottom:20px;">Start a Project</h3>
+            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+            <div class="form-group"><input type="text" name="subject" placeholder="Research Area"></div>
+            <div class="form-group"><textarea name="message" placeholder="Describe your research needs" required></textarea></div>
+            <button type="submit" class="btn btn-sub-primary submit-btn" style="width:100%;justify-content:center;">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</div></div></section>
+{% endblock %}

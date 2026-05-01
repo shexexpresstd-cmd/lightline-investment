@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Lightline Investment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awflare/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 100%); }
+        .login-container { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); width: 100%; max-width: 450px; }
+        .logo { display: flex; align-items: center; justify-content: center; gap: 12px; font-size: 28px; font-weight: 700; margin-bottom: 30px; }
+        .logo-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0f0f0f; font-size: 22px; }
+        h1 { font-size: 1.5rem; margin-bottom: 10px; text-align: center; color: #0f0f0f; }
+        p { color: #6b7280; text-align: center; margin-bottom: 30px; font-size: 14px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; color: #374151; }
+        .form-group input { width: 100%; padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 15px; transition: 0.3s; }
+        .form-group input:focus { outline: none; border-color: #fca311; }
+        .btn { width: 100%; padding: 16px; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); border: none; border-radius: 10px; font-size: 16px; font-weight: 600; color: #0f0f0f; cursor: pointer; transition: 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(252, 163, 17, 0.4); }
+        .back-link { display: block; text-align: center; margin-top: 20px; color: #6b7280; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #fca311; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <div class="logo-icon"><i class="fas fa-chart-line"></i></div>
+            <span style="color: #0a2463;">Lightline</span>
+        </div>
+        <h1>Admin Login</h1>
+        <p>Access the dashboard to manage your website content</p>
+        <form method="POST" action="/admin/login">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn">Sign In <i class="fas fa-arrow-right"></i></button>
+        </form>
+        <a href="/" class="back-link"><i class="fas fa-arrow-left"></i> Back to Website</a>
+    </div>
+</body>
+</html>

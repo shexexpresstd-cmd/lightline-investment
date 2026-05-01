@@ -1,0 +1,155 @@
+{% extends "main/base.html" %}
+{% block title %}About Us{% endblock %}
+{% block content %}
+
+<section class="page-header">
+    <div class="container">
+        <span class="section-tag" data-aos="fade-up">About Us</span>
+        <h1 data-aos="fade-up" data-aos-delay="100">Our Story</h1>
+        <p data-aos="fade-up" data-aos-delay="200">From vision to reality — building a diversified holding company that spans industries and continents.</p>
+    </div>
+</section>
+
+<section class="section section-dark">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;">
+            <div data-aos="fade-right">
+                <span class="section-tag">Who We Are</span>
+                <h2 style="font-size:2.5rem;margin-bottom:20px;">A Diversified<br>Holding Company</h2>
+                <p style="color:var(--gray-400);margin-bottom:20px;line-height:1.8;">
+                    Lightline Investment Group is the parent company of a family of specialized businesses. 
+                    We provide strategic direction, capital, and operational support to our subsidiaries, 
+                    enabling them to excel in their respective markets.
+                </p>
+                <p style="color:var(--gray-400);margin-bottom:20px;line-height:1.8;">
+                    Our portfolio spans five key sectors: engineering, logistics, capital management, 
+                    research and development, and professional training. Each subsidiary operates with 
+                    operational independence while benefiting from the group's shared resources, 
+                    network, and strategic vision.
+                </p>
+                <p style="color:var(--gray-400);line-height:1.8;">
+                    Together, we employ over 500 professionals and serve clients across the Middle East, 
+                    Africa, Asia, and Europe.
+                </p>
+            </div>
+            <div data-aos="fade-left">
+                <div style="background:var(--gradient-hero);border-radius:var(--border-radius-lg);padding:40px;border:1px solid rgba(252,163,17,0.2);">
+                    <h3 style="color:var(--white);margin-bottom:24px;font-size:1.5rem;">Our Core Values</h3>
+                    <div style="display:flex;flex-direction:column;gap:20px;">
+                        <div style="display:flex;gap:16px;">
+                            <div style="width:50px;height:50px;border-radius:12px;background:rgba(252,163,17,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-handshake" style="color:var(--accent);font-size:1.2rem;"></i></div>
+                            <div><h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Integrity</h4><p style="color:var(--gray-400);font-size:0.85rem;">Uncompromising ethical standards in all we do</p></div>
+                        </div>
+                        <div style="display:flex;gap:16px;">
+                            <div style="width:50px;height:50px;border-radius:12px;background:rgba(252,163,17,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-lightbulb" style="color:var(--accent);font-size:1.2rem;"></i></div>
+                            <div><h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Innovation</h4><p style="color:var(--gray-400);font-size:0.85rem;">Embracing new ideas and cutting-edge solutions</p></div>
+                        </div>
+                        <div style="display:flex;gap:16px;">
+                            <div style="width:50px;height:50px;border-radius:12px;background:rgba(252,163,17,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-users" style="color:var(--accent);font-size:1.2rem;"></i></div>
+                            <div><h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Collaboration</h4><p style="color:var(--gray-400);font-size:0.85rem;">Working together across our companies for greater impact</p></div>
+                        </div>
+                        <div style="display:flex;gap:16px;">
+                            <div style="width:50px;height:50px;border-radius:12px;background:rgba(252,163,17,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-globe" style="color:var(--accent);font-size:1.2rem;"></i></div>
+                            <div><h4 style="color:var(--white);font-family:'Poppins',sans-serif;font-size:1rem;">Global Reach</h4><p style="color:var(--gray-400);font-size:0.85rem;">Thinking globally, acting locally across markets</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="section section-gray">
+    <div class="container">
+        <div class="stats-grid">
+            {% for stat in stats %}
+            <div class="stat-card counter-section" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="stat-icon"><i class="fas fa-{{ stat.icon }}"></i></div>
+                <div>
+                    <span class="counter-number" data-target="{{ stat.value }}">0</span>
+                    <span class="stat-suffix">{{ stat.suffix }}</span>
+                </div>
+                <div class="stat-label">{{ stat.label }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Our Companies -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Our Portfolio</span>
+            <h2>Five Companies, One Vision</h2>
+            <p>Each subsidiary operates independently with its own leadership, united by our shared values and strategic direction.</p>
+        </div>
+        <div class="subsidiaries-grid">
+            <a href="/engineering" class="subsidiary-card engineering" data-aos="fade-up">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Lightline Engineering</h3>
+                    <p>Infrastructure development, construction, and engineering design services.</p>
+                </div>
+                <div class="card-footer"><span>Learn More</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/logistics" class="subsidiary-card logistics" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-truck"></i></div>
+                    <h3>Lightline Logistics</h3>
+                    <p>Supply chain management, freight forwarding, and warehousing solutions.</p>
+                </div>
+                <div class="card-footer"><span>Learn More</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/capital" class="subsidiary-card capital" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Lightline Capital</h3>
+                    <p>Asset management, private equity, and strategic investment advisory.</p>
+                </div>
+                <div class="card-footer"><span>Learn More</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/research" class="subsidiary-card research" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-flask"></i></div>
+                    <h3>Lightline Research</h3>
+                    <p>Market research, data analytics, and innovation consulting.</p>
+                </div>
+                <div class="card-footer"><span>Learn More</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="/cfe" class="subsidiary-card cfe" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-header">
+                    <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>CFE Training Centre</h3>
+                    <p>Professional development, certification programs, and corporate training.</p>
+                </div>
+                <div class="card-footer"><span>Learn More</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Team -->
+<section class="section section-gray" id="team">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Leadership</span>
+            <h2>Executive Team</h2>
+        </div>
+        <div class="grid-4">
+            {% for member in team %}
+            <div class="card" data-aos="fade-up" style="text-align:center;">
+                <div style="width:80px;height:80px;border-radius:50%;background:var(--gray-700);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fas fa-user-tie" style="font-size:2rem;color:var(--gray-500);"></i>
+                </div>
+                <h3 style="font-family:'Poppins',sans-serif;font-size:1rem;color:var(--white);">{{ member.name }}</h3>
+                <p style="color:var(--accent);font-size:0.85rem;">{{ member.role }}</p>
+                <p style="color:var(--gray-400);font-size:0.8rem;margin-top:8px;">{{ member.bio[:100] }}{% if member.bio|length > 100 %}...{% endif %}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

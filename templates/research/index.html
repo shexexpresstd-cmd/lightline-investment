@@ -1,0 +1,40 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Research" %}{% set primary_color = "#2d2450" %}{% set primary_dark = "#1a1435" %}{% set primary_light = "#453a70" %}{% set accent_color = "#8b7aaf" %}{% set accent_light = "#a898c4" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Pushing the boundaries of innovation through dedicated research and development." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
+{% block title %}Lightline Research{% endblock %}
+{% block content %}
+<section class="hero-sub">
+    <div style="position:absolute;inset:0;overflow:hidden;"><div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);top:-10%;right:-5%;animation:float 20s infinite ease-in-out;"></div></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="hero-content"><div class="hero-badge" data-aos="fade-up"><i class="fas fa-flask"></i> Research & Innovation</div>
+            <h1 data-aos="fade-up" data-aos-delay="100"><span style="background:linear-gradient(135deg,#9b59b6,#d2b4de);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Innovation</span><br>Through Discovery</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Market research, data analytics, economic forecasting, and innovation consulting that empowers informed decision-making.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/research/insights" class="btn btn-sub-primary">Our Insights <i class="fas fa-arrow-right"></i></a>
+                <a href="/research/contact" class="btn btn-secondary">Partner With Us <i class="fas fa-handshake"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container"><div class="grid-2" style="align-items:center;">
+        <div data-aos="fade-right"><span class="section-tag">Why Choose Us</span><h2 style="font-size:2.2rem;margin-bottom:20px;">Data-Driven<br>Decisions</h2><p style="color:var(--gray-400);line-height:1.8;">Lightline Research combines advanced analytics with deep industry expertise to deliver actionable insights that drive business growth and innovation.</p></div>
+        <div class="grid-2" data-aos="fade-left" style="gap:16px;">
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-chart-bar" style="font-size:2rem;color:#9b59b6;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Market Research</h4><p style="color:var(--gray-400);font-size:0.85rem;">Industry analysis</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-database" style="font-size:2rem;color:#9b59b6;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Data Analytics</h4><p style="color:var(--gray-400);font-size:0.85rem;">Advanced insights</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-brain" style="font-size:2rem;color:#9b59b6;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">AI & ML</h4><p style="color:var(--gray-400);font-size:0.85rem;">Smart solutions</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-file-alt" style="font-size:2rem;color:#9b59b6;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Forecasting</h4><p style="color:var(--gray-400);font-size:0.85rem;">Economic predictions</p></div>
+        </div>
+    </div></div>
+</section>
+<section class="section section-dark">
+    <div class="container"><div class="section-header"><span class="section-tag">Expertise</span><h2>Research Capabilities</h2></div>
+        <div class="grid-3">
+            {% for s in [("Market Research","chart-bar","In-depth industry analysis and competitive intelligence."),("Data Analytics","database","Advanced statistical modeling and data visualization."),("AI & Machine Learning","brain","Custom ML models for predictive analytics."),("Economic Forecasting","chart-line","Macroeconomic analysis and market predictions."),("Innovation Consulting","lightbulb","Strategic innovation frameworks and R&D support."),("Consumer Insights","users","Deep-dive consumer behavior analysis and segmentation.")] %}
+            <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(155,89,182,0.1);color:#9b59b6;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section" style="background:linear-gradient(135deg,#5b2c6f,#9b59b6);text-align:center;">
+    <div class="container"><div data-aos="fade-up"><h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Let's Discover Together</h2><p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Partner with us for cutting-edge research and actionable insights.</p><a href="/research/contact" class="btn btn-sub-primary">Partner With Us <i class="fas fa-arrow-right"></i></a></div></div>
+</section>
+{% endblock %}

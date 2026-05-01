@@ -1,0 +1,40 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Capital" %}{% set primary_color = "#1a2744" %}{% set primary_dark = "#0f1a30" %}{% set primary_light = "#2a3d66" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "capital" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Strategic investment management, private equity, and financial advisory services." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-capital.png" %}
+{% block title %}Lightline Capital{% endblock %}
+{% block content %}
+<section class="hero-sub">
+    <div style="position:absolute;inset:0;overflow:hidden;"><div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);top:-10%;right:-5%;animation:float 20s infinite ease-in-out;"></div></div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="hero-content"><div class="hero-badge" data-aos="fade-up"><i class="fas fa-chart-line"></i> Capital Management</div>
+            <h1 data-aos="fade-up" data-aos-delay="100"><span style="background:linear-gradient(135deg,#f39c12,#f7dc6f);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Strategic Capital</span><br>Maximum Returns</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Expert investment management, private equity, and financial advisory services designed to grow and protect your wealth.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/capital/services" class="btn btn-sub-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+                <a href="/capital/contact" class="btn btn-secondary">Schedule a Meeting <i class="fas fa-calendar"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container"><div class="grid-2" style="align-items:center;">
+        <div data-aos="fade-right"><span class="section-tag">Why Choose Us</span><h2 style="font-size:2.2rem;margin-bottom:20px;">Capital That<br>Works For You</h2><p style="color:var(--gray-400);margin-bottom:16px;line-height:1.8;">Lightline Capital combines deep market expertise with a disciplined investment approach to deliver consistent, risk-adjusted returns for our clients.</p></div>
+        <div class="grid-2" data-aos="fade-left" style="gap:16px;">
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-handshake" style="font-size:2rem;color:#f39c12;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Private Equity</h4><p style="color:var(--gray-400);font-size:0.85rem;">High-value investments</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-chart-pie" style="font-size:2rem;color:#f39c12;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Asset Mgmt</h4><p style="color:var(--gray-400);font-size:0.85rem;">Portfolio optimization</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-building" style="font-size:2rem;color:#f39c12;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Real Estate</h4><p style="color:var(--gray-400);font-size:0.85rem;">Property investments</p></div>
+            <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);"><i class="fas fa-lightbulb" style="font-size:2rem;color:#f39c12;margin-bottom:12px;"></i><h4 style="color:var(--white);font-size:1.1rem;">Advisory</h4><p style="color:var(--gray-400);font-size:0.85rem;">Strategic consulting</p></div>
+        </div>
+    </div></div>
+</section>
+<section class="section section-dark">
+    <div class="container"><div class="section-header"><span class="section-tag">Services</span><h2>Capital Solutions</h2></div>
+        <div class="grid-3">
+            {% for s in [("Private Equity","handshake","Strategic investments in high-growth companies and buyouts."),("Asset Management","chart-pie","Professional management of diversified investment portfolios."),("Real Estate","building","Commercial and residential property investment opportunities."),("Financial Advisory","lightbulb","Strategic financial planning and M&A advisory."),("Wealth Mgmt","coins","Comprehensive wealth preservation and growth strategies."),("Risk Management","shield-alt","Advanced risk assessment and mitigation frameworks.")] %}
+            <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(243,156,18,0.1);color:#f39c12;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section" style="background:linear-gradient(135deg,#b7791f,#f39c12);text-align:center;">
+    <div class="container"><div data-aos="fade-up"><h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Ready to Grow Your Wealth?</h2><p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Schedule a confidential consultation with our investment advisors.</p><a href="/capital/contact" class="btn btn-sub-primary">Book a Consultation <i class="fas fa-arrow-right"></i></a></div></div>
+</section>
+{% endblock %}

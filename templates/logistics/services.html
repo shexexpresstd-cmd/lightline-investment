@@ -1,0 +1,13 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Logistics" %}{% set primary_color = "#2c3e6b" %}{% set primary_dark = "#1a2444" %}{% set primary_light = "#3d5090" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "logistics" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Global supply chain solutions." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-logistics.png" %}
+{% block title %}Services - Lightline Logistics{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Logistics Services</h1><p data-aos="fade-up" data-aos-delay="100">Comprehensive logistics solutions tailored to your business needs.</p></div></section>
+<section class="section section-dark">
+    <div class="container"><div class="grid-3">
+        {% for s in [("Sea Freight","ship","FCL & LCL shipping to major ports worldwide."),("Air Freight","plane","Fast, reliable air cargo services."),("Land Freight","truck","Cross-border transport across GCC."),("Warehousing","warehouse","Secure storage with inventory management."),("Supply Chain","cogs","End-to-end supply chain optimization."),("Last Mile","home","Final delivery for e-commerce & retail.")] %}
+        <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(39,174,96,0.1);color:#27ae60;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>
+        {% endfor %}
+    </div></div>
+</section>
+{% endblock %}

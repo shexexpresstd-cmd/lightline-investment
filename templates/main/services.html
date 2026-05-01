@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+{% block title %}Services{% endblock %}
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <span class="section-tag" data-aos="fade-up">Our Services</span>
+        <h1 data-aos="fade-up" data-aos-delay="100">What We Offer</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Comprehensive financial and strategic services to help you achieve your goals.</p>
+    </div>
+</section>
+<section class="section section-dark">
+    <div class="container">
+        <div class="grid-3">
+            {% for service in services %}
+            <div class="card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                <div class="card-icon"><i class="fas fa-{{ service.icon }}"></i></div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<section class="section" style="background:var(--gradient-hero);text-align:center;">
+    <div class="container">
+        <div data-aos="fade-up">
+            <h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Need a Custom Solution?</h2>
+            <p style="color:var(--gray-400);max-width:600px;margin:0 auto 40px;">Our team of experts can design a tailored strategy for your unique needs.</p>
+            <a href="/contact" class="btn btn-primary">Get in Touch <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

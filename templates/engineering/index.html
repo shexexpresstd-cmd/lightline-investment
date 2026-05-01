@@ -1,0 +1,116 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Engineering" %}{% set logo_file = "logo-engineering.png" %}
+{% set primary_color = "#1a3a5c" %}
+{% set primary_dark = "#0e2440" %}
+{% set primary_light = "#2a5a8c" %}
+{% set accent_color = "#4fa5d5" %}
+{% set accent_light = "#85c1e9" %}
+{% set route_prefix = "engineering" %}
+{% set services_link = "services" %}
+{% set services_label = "Services" %}
+{% set company_description = "Designing and building the infrastructure of tomorrow with cutting-edge engineering solutions, project management, and construction excellence." %}
+{% set contact_email = "info@lightlinetrainingcentre.org" %}
+{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}
+{% block title %}Lightline Engineering{% endblock %}
+{% block content %}
+<section class="hero-sub">
+    <div style="position:absolute;inset:0;overflow:hidden;">
+        <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:rgba(255,255,255,0.02);top:-10%;right:-5%;animation:float 20s infinite ease-in-out;"></div>
+        <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,0.03);bottom:-5%;left:10%;animation:float 25s infinite ease-in-out reverse;"></div>
+    </div>
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="hero-content" style="max-width:750px;">
+            <div class="hero-badge" data-aos="fade-up"><i class="fas fa-hard-hat"></i> Engineering Excellence</div>
+            <h1 data-aos="fade-up" data-aos-delay="100">Building the<br><span style="background:linear-gradient(135deg,#3498db,#85c1e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Infrastructure</span> of Tomorrow</h1>
+            <p data-aos="fade-up" data-aos-delay="200">From concept to completion, we deliver world-class engineering solutions across civil, structural, mechanical, and electrical disciplines.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+                <a href="/engineering/services" class="btn btn-sub-primary">Our Services <i class="fas fa-arrow-right"></i></a>
+                <a href="/engineering/contact" class="btn btn-secondary">Get a Quote <i class="fas fa-file-invoice"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-gray">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;">
+            <div data-aos="fade-right">
+                <span class="section-tag">Why Choose Us</span>
+                <h2 style="font-size:2.2rem;margin-bottom:20px;">Engineering<br>That Delivers</h2>
+                <p style="color:var(--gray-400);margin-bottom:16px;line-height:1.8;">With a track record of successful projects across the UAE and Middle East, Lightline Engineering combines technical expertise with innovative approaches to deliver results that exceed expectations.</p>
+                <p style="color:var(--gray-400);line-height:1.8;">Our team of certified engineers, project managers, and technical specialists brings decades of combined experience to every project.</p>
+            </div>
+            <div class="grid-2" data-aos="fade-left" style="gap:16px;">
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-drafting-compass" style="font-size:2rem;color:#3498db;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Design</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Architectural & structural design</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-building" style="font-size:2rem;color:#3498db;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Construction</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">End-to-end project delivery</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-cogs" style="font-size:2rem;color:#3498db;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">MEP</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Mechanical, electrical & plumbing</p>
+                </div>
+                <div style="background:var(--gray-800);border-radius:var(--border-radius);padding:25px;text-align:center;border:1px solid var(--gray-700);">
+                    <i class="fas fa-tasks" style="font-size:2rem;color:#3498db;margin-bottom:12px;"></i>
+                    <h4 style="color:var(--white);font-size:1.1rem;">Management</h4>
+                    <p style="color:var(--gray-400);font-size:0.85rem;">Project & site management</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section-dark">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Core Services</span>
+            <h2>Our Engineering Expertise</h2>
+        </div>
+        <div class="grid-3">
+            <div class="card" data-aos="fade-up">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-city"></i></div>
+                <h3>Civil Engineering</h3>
+                <p>Infrastructure development, road networks, bridges, and large-scale civil works for government and private sectors.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-home"></i></div>
+                <h3>Structural Engineering</h3>
+                <p>Design and analysis of building structures, from high-rises to industrial facilities, ensuring safety and durability.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-bolt"></i></div>
+                <h3>MEP Services</h3>
+                <p>Mechanical, electrical, and plumbing systems design and installation for commercial and residential projects.</p>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-hard-hat"></i></div>
+                <h3>Project Management</h3>
+                <p>Comprehensive project planning, scheduling, cost control, and quality assurance from concept to handover.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-leaf"></i></div>
+                <h3>Sustainable Design</h3>
+                <p>Eco-friendly and energy-efficient design solutions that reduce environmental impact and operational costs.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-icon" style="background:rgba(52,152,219,0.1);color:#3498db;"><i class="fas fa-ruler-combined"></i></div>
+                <h3>Feasibility Studies</h3>
+                <p>Technical feasibility assessments, site evaluations, and cost-benefit analysis for proposed projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" style="background:linear-gradient(135deg,#1a5276,#2980b9);text-align:center;">
+    <div class="container">
+        <div data-aos="fade-up">
+            <h2 style="font-size:2.5rem;color:var(--white);margin-bottom:16px;">Ready to Build?</h2>
+            <p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Let's discuss your next engineering project and how we can bring it to life.</p>
+            <a href="/engineering/contact" class="btn btn-sub-primary">Start Your Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}

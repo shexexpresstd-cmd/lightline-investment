@@ -1,0 +1,16 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Engineering" %}{% set primary_color = "#1a3a5c" %}{% set primary_dark = "#0e2440" %}{% set primary_light = "#2a5a8c" %}{% set accent_color = "#4fa5d5" %}{% set accent_light = "#85c1e9" %}{% set route_prefix = "engineering" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Designing and building the infrastructure of tomorrow." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-engineering.png" %}
+{% block title %}Projects - Lightline Engineering{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Our Projects</h1><p data-aos="fade-up" data-aos-delay="100">Showcasing our finest engineering achievements.</p></div></section>
+<section class="section section-dark">
+    <div class="container"><div class="grid-3">
+        {% for p in [("Commercial Tower","A 45-story commercial high-rise in Dubai Marina","city"),("Highway Bridge","Major highway interchange bridge project","road"),("Industrial Park","100,000 sqm industrial facility","industry"),("Residential Complex","500+ unit luxury residential development","home"),("Water Treatment","State-of-the-art water treatment facility","water"),("Solar Farm","50MW solar energy installation","sun")] %}
+        <div class="card" data-aos="fade-up" style="padding:0;overflow:hidden;">
+            <div style="height:200px;background:linear-gradient(135deg,#1a5276,#2980b9);display:flex;align-items:center;justify-content:center;"><i class="fas fa-{{ p[2] }}" style="font-size:3rem;color:rgba(255,255,255,0.3);"></i></div>
+            <div style="padding:25px;"><h3 style="font-family:'Poppins',sans-serif;font-size:1.1rem;color:var(--white);">{{ p[0] }}</h3><p style="color:var(--gray-400);font-size:0.9rem;margin-top:8px;">{{ p[1] }}</p></div>
+        </div>
+        {% endfor %}
+    </div></div>
+</section>
+{% endblock %}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribers | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: #f3f4f6; }
+        .sidebar { position: fixed; left: 0; top: 0; width: 260px; height: 100vh; background: #0a2463; color: white; padding: 30px 20px; }
+        .sidebar-logo { display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 700; margin-bottom: 40px; }
+        .sidebar-logo .icon { width: 45px; height: 45px; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #0f0f0f; }
+        .nav-links { list-style: none; }
+        .nav-links li { margin-bottom: 8px; }
+        .nav-links a { display: flex; align-items: center; gap: 12px; padding: 14px 18px; color: #d1d5db; text-decoration: none; border-radius: 10px; transition: 0.3s; font-weight: 500; }
+        .nav-links a:hover, .nav-links a.active { background: rgba(255,255,255,0.1); color: white; }
+        .main-content { margin-left: 260px; padding: 30px; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .header h1 { font-size: 1.8rem; color: #0f0f0f; }
+        .card { background: white; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); padding: 25px; }
+        .card-header { margin-bottom: 20px; }
+        .card-header h2 { font-size: 1.2rem; color: #0f0f0f; }
+        .table { width: 100%; border-collapse: collapse; }
+        .table th, .table td { padding: 15px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        .table th { color: #6b7280; font-weight: 500; font-size: 14px; }
+        .table td { font-size: 14px; color: #374151; }
+        .email-cell { display: flex; align-items: center; gap: 10px; }
+        .email-icon { width: 35px; height: 35px; background: rgba(59, 130, 246, 0.1); color: #3b82f6; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+        @media (max-width: 768px) { .sidebar { display: none; } .main-content { margin-left: 0; } }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo"><div class="icon"><i class="fas fa-chart-line"></i></div><span>Lightline</span></div>
+        <ul class="nav-links">
+            <li><a href="/admin/dashboard"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="/admin/contacts"><i class="fas fa-envelope"></i> Contacts</a></li>
+            <li><a href="/admin/services"><i class="fas fa-briefcase"></i> Services</a></li>
+            <li><a href="/admin/portfolio"><i class="fas fa-folder-open"></i> Portfolio</a></li>
+            <li><a href="/admin/subscribers" class="active"><i class="fas fa-users"></i> Subscribers</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <div class="header">
+            <h1>Newsletter Subscribers</h1>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2>All Subscribers (<span id="count">{{ subscribers|length }}</span>)</h2>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Subscribed Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for sub in subscribers %}
+                    <tr>
+                        <td>
+                            <div class="email-cell">
+                                <div class="email-icon"><i class="fas fa-envelope"></i></div>
+                                <strong>{{ sub.email }}</strong>
+                            </div>
+                        </td>
+                        <td>{{ sub.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% if not subscribers %}
+                    <tr><td colspan="2" style="text-align: center; color: #9ca3af; padding: 40px;">No subscribers yet</td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "subsidiary_base.html" %}
+{% set company_name = "Lightline Capital" %}{% set primary_color = "#1a2744" %}{% set primary_dark = "#0f1a30" %}{% set primary_light = "#2a3d66" %}{% set accent_color = "#c9a84c" %}{% set accent_light = "#dfc278" %}{% set route_prefix = "capital" %}{% set services_link = "services" %}{% set services_label = "Services" %}{% set company_description = "Strategic investment management." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-capital.png" %}
+{% block title %}Services - Lightline Capital{% endblock %}
+{% block content %}
+<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Capital Services</h1><p data-aos="fade-up" data-aos-delay="100">Comprehensive financial solutions for institutions and individuals.</p></div></section>
+<section class="section section-dark"><div class="container"><div class="grid-3">
+    {% for s in [("Private Equity","handshake","High-growth investments and buyouts."),("Asset Management","chart-pie","Diversified portfolio management."),("Real Estate","building","Property investment opportunities."),("Financial Advisory","lightbulb","M&A and strategic planning."),("Wealth Management","coins","Wealth preservation & growth."),("Risk Management","shield-alt","Advanced risk assessment.")] %}
+    <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(243,156,18,0.1);color:#f39c12;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
+</div></div></section>
+{% endblock %}

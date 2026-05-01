@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error {{ code }} | Lightline Investment</title>
+    <style>
+        body { font-family: 'Poppins', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: linear-gradient(135deg, #0a2463 0%, #1e3a8a 100%); }
+        .error-container { text-align: center; color: white; padding: 40px; }
+        .error-code { font-size: 120px; font-weight: 800; margin: 0; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+        h1 { font-size: 2rem; margin: 20px 0; }
+        p { color: #9ca3af; margin-bottom: 30px; }
+        a { display: inline-block; padding: 14px 30px; background: linear-gradient(135deg, #fca311 0%, #ffb732 100%); color: #0f0f0f; text-decoration: none; border-radius: 50px; font-weight: 600; }
+        a:hover { transform: translateY(-3px); }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1 class="error-code">{{ code }}</h1>
+        <h1>Oops! Something went wrong</h1>
+        <p>{{ error }}</p>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
