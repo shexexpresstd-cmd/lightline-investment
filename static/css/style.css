@@ -453,6 +453,11 @@ p {
     padding: 80px 0 30px;
     border-top: 1px solid var(--gray-800);
 }
+/* Research subsidiary footer override */
+body:has(.sub-navbar) .footer,
+.footer.research-footer {
+    background: #1e3a8a !important;
+}
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;

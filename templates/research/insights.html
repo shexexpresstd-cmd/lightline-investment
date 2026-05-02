@@ -1,10 +1,157 @@
 {% extends "subsidiary_base.html" %}
-{% set company_name = "Lightline Research" %}{% set primary_color = "#2d2450" %}{% set primary_dark = "#1a1435" %}{% set primary_light = "#453a70" %}{% set accent_color = "#8b7aaf" %}{% set accent_light = "#a898c4" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Innovation through discovery." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
-{% block title %}Insights - Lightline Research{% endblock %}
+{% set company_name = "Lightline Research" %}{% set primary_color = "#1e293b" %}{% set primary_dark = "#0f172a" %}{% set primary_light = "#334155" %}{% set accent_color = "#2563eb" %}{% set accent_light = "#3b82f6" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Insight partners across Africa—blending human understanding and analytics for confident decisions." %}{% set contact_email = "info@lightlineresearch.com" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
+{% block title %}Services - Lightline Research{% endblock %}
+{% block extra_css %}
+<style>
+    .r-page-header { padding: 160px 0 80px; background-image: url('/static/images/training_centre1.jpeg'); background-size: cover; background-position: center; position: relative; text-align: center; }
+    .r-page-header::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.2)); }
+    .r-page-header .container { position: relative; z-index: 2; }
+    .r-page-header h1 { font-size: 2.8rem; color: #fff; font-weight: 800; margin-bottom: 12px; }
+    .r-page-header p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+    .r-section { padding: 80px 0; background: #fff; }
+    .r-section-alt { padding: 80px 0; background: #f8fafc; }
+    .r-section-dark { padding: 80px 0; background: #0f172a; }
+    .r-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; }
+    .r-icon { width: 56px; height: 56px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 1.4rem; color: #2563eb; }
+    .r-card h3 { color: #0f172a; font-size: 1.15rem; margin-bottom: 10px; }
+    .r-card p { color: #64748b; line-height: 1.7; }
+    .r-tag { display: inline-block; background: #f1f5f9; color: #475569; padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; margin: 2px; }
+    .btn-r-primary { background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+    .btn-r-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .btn-r-outline-white { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+    .btn-r-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    /* Image Gallery */
+    .r-gallery { padding: 80px 0; background: #f8fafc; }
+    .r-gallery-title { text-align: center; margin-bottom: 12px; }
+    .r-gallery-title h2 { font-size: 2rem; color: #0f172a; margin-bottom: 8px; }
+    .r-gallery-title p { color: #64748b; font-size: 1rem; }
+    .r-gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .r-gallery-item { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); background: #e2e8f0; }
+    .r-gallery-item img { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .r-gallery-item:hover img { transform: scale(1.06); }
+    .r-gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px 16px; background: linear-gradient(to top, rgba(15,23,42,0.85) 0%, transparent 100%); }
+    .r-gallery-overlay span { color: #fff; font-size: 0.9rem; font-weight: 600; }
+    @media (max-width: 768px) { .r-gallery-grid { grid-template-columns: 1fr; } .r-gallery-item img { height: 220px; } }
+
+</style>
+{% endblock %}
 {% block content %}
-<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">Our Insights</h1><p data-aos="fade-up" data-aos-delay="100">Thought leadership, research reports, and industry analysis.</p></div></section>
-<section class="section section-dark"><div class="container"><div class="grid-3">
-    {% for s in [("Market Research","chart-bar","In-depth industry analysis and competitive intelligence."),("Data Analytics","database","Advanced statistical modeling and visualization."),("AI & Machine Learning","brain","Custom ML models for predictive analytics."),("Economic Forecasting","chart-line","Macroeconomic analysis and predictions."),("Innovation Consulting","lightbulb","Strategic innovation frameworks and R&D support."),("Consumer Insights","users","Consumer behavior analysis and segmentation.")] %}
-    <div class="card" data-aos="fade-up"><div class="card-icon" style="background:rgba(155,89,182,0.1);color:#9b59b6;"><i class="fas fa-{{ s[1] }}"></i></div><h3>{{ s[0] }}</h3><p>{{ s[2] }}</p></div>{% endfor %}
-</div></div></section>
+<!-- Page Header -->
+<section class="r-page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">Research that Answers Real Questions</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Full-service research support, from study design to data collection and insight delivery across African markets.</p>
+    </div>
+</section>
+
+<!-- Services -->
+<section class="r-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:20px;" data-aos="fade-up">
+            <span class="section-tag" style="color:#2563eb;font-weight:600;">Service Lines</span>
+            <h2 style="font-size:2.2rem;color:#0f172a;">What we run for brands, institutions, and partners</h2>
+        </div>
+        <p style="color:#64748b;max-width:700px;margin:0 auto 50px;text-align:center;font-size:1.05rem;">Each line uses the same discipline in design and execution. We tune sample frames, methods, and analysis depth to fit your objectives, timelines, and budgets.</p>
+        <div class="grid-3">
+            <div class="r-card" data-aos="fade-up">
+                <div class="r-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Market Research</h3>
+                <p>Brand health, U&A, market share, recall, recognition, identity, image, trust, loyalty, and customer profiling.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">Brand health</span><span class="r-tag">U & A</span><span class="r-tag">Segmentation</span><span class="r-tag">Share</span>
+                </div>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="r-icon"><i class="fas fa-smile"></i></div>
+                <h3>Satisfaction Research</h3>
+                <p>Customer satisfaction, engagement, employee satisfaction, agent satisfaction, and profiling surveys.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">CSAT</span><span class="r-tag">Employee</span><span class="r-tag">Agent</span>
+                </div>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="r-icon"><i class="fas fa-box-open"></i></div>
+                <h3>Product & Services</h3>
+                <p>Concept tests, product testing, and usage analysis to validate ideas before and after launch.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">Concept tests</span><span class="r-tag">Product tests</span><span class="r-tag">U & A</span>
+                </div>
+            </div>
+            <div class="r-card" data-aos="fade-up">
+                <div class="r-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Trackers</h3>
+                <p>Brand tracking, ad tracking, and image tracking for continuous performance visibility.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">Brand</span><span class="r-tag">Ad track</span><span class="r-tag">Image</span>
+                </div>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="r-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>Social Research</h3>
+                <p>Impact assessments, KAPs, monitoring and evaluation, and political opinion polling.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">Impact</span><span class="r-tag">KAP</span><span class="r-tag">M & E</span><span class="r-tag">Polling</span>
+                </div>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="r-icon"><i class="fas fa-store"></i></div>
+                <h3>Trade Research</h3>
+                <p>Mystery shopper, retail audits, and market census to evaluate channels and compliance.</p>
+                <div style="margin-top:14px;">
+                    <span class="r-tag">Mystery shop</span><span class="r-tag">Retail audit</span><span class="r-tag">Census</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section class="r-gallery">
+    <div class="container">
+        <div class="r-gallery-title" data-aos="fade-up">
+            <h2>Our Research Spaces</h2>
+            <p>Where data meets insight — and insight drives decisions</p>
+        </div>
+        <div class="r-gallery-grid">
+            <div class="r-gallery-item" data-aos="fade-up">
+                <img src="/static/images/qualitative1.jpg" alt="Qualitative Research Sessions">
+                <div class="r-gallery-overlay"><span>Focus Group Discussions</span></div>
+            </div>
+            <div class="r-gallery-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="/static/images/qualitative2.jpg" alt="Quantitative Research Setup">
+                <div class="r-gallery-overlay"><span>Quantitative Research</span></div>
+            </div>
+            <div class="r-gallery-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="/static/images/team.jpg" alt="Our Research Team">
+                <div class="r-gallery-overlay"><span>Our Expert Team</span></div>
+            </div>
+            <div class="r-gallery-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="/static/images/quantitative2.jpg" alt="Training Centre">
+                <div class="r-gallery-overlay"><span>Training Centre</span></div>
+            </div>
+            <div class="r-gallery-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="/static/images/training_centre3.jpeg" alt="Research Facilities">
+                <div class="r-gallery-overlay"><span>Research Facilities</span></div>
+            </div>
+            <div class="r-gallery-item" data-aos="fade-up" data-aos-delay="500">
+                <img src="/static/images/training_centre4.jpeg" alt="Field Operations">
+                <div class="r-gallery-overlay"><span>Field Operations</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="r-section-dark">
+    <div class="container" style="text-align:center;">
+        <div data-aos="fade-up">
+            <h2 style="font-size:2.2rem;color:#fff;margin-bottom:16px;">Need a specific study type or a mix of methods?</h2>
+            <p style="color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 40px;">Share your objectives, markets, and timelines and we will propose a design, method mix, and sample plan that is realistic for the countries you want to cover.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="/research/contact" class="btn-r-primary">Request a Quote</a>
+                <a href="/research/about" class="btn-r-outline-white">Learn About Our Approach</a>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

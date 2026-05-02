@@ -1,18 +1,135 @@
 {% extends "subsidiary_base.html" %}
-{% set company_name = "Lightline Research" %}{% set primary_color = "#2d2450" %}{% set primary_dark = "#1a1435" %}{% set primary_light = "#453a70" %}{% set accent_color = "#8b7aaf" %}{% set accent_light = "#a898c4" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Innovation through discovery." %}{% set contact_email = "info@lightlinetrainingcentre.org" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
+{% set company_name = "Lightline Research" %}{% set primary_color = "#1e293b" %}{% set primary_dark = "#0f172a" %}{% set primary_light = "#334155" %}{% set accent_color = "#2563eb" %}{% set accent_light = "#3b82f6" %}{% set route_prefix = "research" %}{% set services_link = "insights" %}{% set services_label = "Insights" %}{% set company_description = "Insight partners across Africa—blending human understanding and analytics for confident decisions." %}{% set contact_email = "info@lightlineresearch.com" %}{% set contact_phone = "+254 722 314 967" %}{% set contact_location = "Nairobi, Kenya" %}{% set logo_file = "logo-research.png" %}
 {% block title %}About - Lightline Research{% endblock %}
+{% block extra_css %}
+<style>
+    .r-page-header {
+        padding: 160px 0 80px;
+        background-image: url('/static/images/team.jpg');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        text-align: center;
+    }
+    .r-page-header::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+    }
+    .r-page-header .container { position: relative; z-index: 2; }
+    .r-page-header h1 { font-size: 2.8rem; color: #fff; font-weight: 800; margin-bottom: 12px; }
+    .r-page-header p { color: rgba(255,255,255,0.8); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+    .r-section { padding: 80px 0; background: #fff; }
+    .r-section-alt { padding: 80px 0; background: #f8fafc; }
+    .r-section-dark { padding: 80px 0; background: #0f172a; }
+    .r-stat { text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px 16px; }
+    .r-stat .num { font-size: 2rem; font-weight: 800; color: #0f172a; }
+    .r-stat .label { color: #64748b; font-size: 0.85rem; margin-top: 6px; }
+    .r-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; }
+    .r-icon { width: 56px; height: 56px; background: #eff6ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 1.4rem; color: #2563eb; }
+    .r-card h3 { color: #0f172a; font-size: 1.15rem; margin-bottom: 10px; }
+    .r-card p { color: #64748b; line-height: 1.7; }
+    .r-list { list-style: none; padding: 0; line-height: 2.4; }
+    .r-list li { color: #64748b; }
+    .r-list li i { color: #2563eb; margin-right: 10px; }
+    .r-blue-num { color: #3b82f6 !important; }
+    .r-tag { display: inline-block; background: #f1f5f9; color: #475569; padding: 4px 12px; border-radius: 20px; font-size: 0.78rem; margin: 2px; }
+    .btn-r-primary { background: #2563eb; color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+    .btn-r-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .btn-r-outline { border: 2px solid rgba(255,255,255,0.5); color: #fff; padding: 14px 32px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-block; }
+    .btn-r-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+</style>
+{% endblock %}
 {% block content %}
-<section class="page-header-sub"><div class="container"><h1 data-aos="fade-up">About Lightline Research</h1><p data-aos="fade-up" data-aos-delay="100">Turning data into decisions, ideas into impact.</p></div></section>
-<section class="section section-dark"><div class="container"><div class="grid-2" style="align-items:center;">
-    <div data-aos="fade-right"><span class="section-tag">Who We Are</span><h2 style="font-size:2rem;margin-bottom:20px;">Where Ideas<br>Meet Impact</h2><p style="color:var(--gray-400);line-height:1.8;">Lightline Research is a team of data scientists, market analysts, and innovation strategists dedicated to providing actionable insights that drive business growth and competitive advantage.</p></div>
-    <div style="background:linear-gradient(135deg,#5b2c6f,#9b59b6);border-radius:var(--border-radius-lg);padding:40px;" data-aos="fade-left">
-        <h3 style="color:var(--white);margin-bottom:24px;">Our Impact</h3>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-            <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">500+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Research Reports</p></div>
-            <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">50+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Data Scientists</p></div>
-            <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">200+</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Client Projects</p></div>
-            <div style="text-align:center;"><div style="font-size:2rem;font-weight:700;color:var(--white);">95%</div><p style="color:rgba(255,255,255,0.7);font-size:0.85rem;">Client Satisfaction</p></div>
+<!-- Page Header -->
+<section class="r-page-header">
+    <div class="container">
+        <h1 data-aos="fade-up">About Lightline Research</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Turning data into decisions, ideas into impact.</p>
+    </div>
+</section>
+
+<!-- Who We Are -->
+<section class="r-section">
+    <div class="container">
+        <div class="grid-2" style="align-items:center;gap:60px;">
+            <div data-aos="fade-right">
+                <span class="section-tag" style="color:#2563eb;font-weight:600;">Inside Lightline</span>
+                <h2 style="font-size:2.2rem;color:#0f172a;margin:12px 0 20px;">Where Ideas<br>Meet Impact</h2>
+                <p style="color:#64748b;line-height:1.9;font-size:1.05rem;">Lightline Research is a team of data scientists, market analysts, and innovation strategists dedicated to providing actionable insights across African markets. For every engagement, we assemble project teams with both local knowledge and sector experience.</p>
+            </div>
+            <div style="background:#0f172a;border-radius:16px;padding:40px;" data-aos="fade-left">
+                <h3 style="color:#fff;margin-bottom:24px;font-size:1.1rem;">Our Impact</h3>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+                    <div style="text-align:center;"><div class="num r-blue-num">15+</div><div class="label" style="color:rgba(255,255,255,0.7);">Countries Covered</div></div>
+                    <div style="text-align:center;"><div class="num r-blue-num">100K+</div><div class="label" style="color:rgba(255,255,255,0.7);">Verified Respondents</div></div>
+                    <div style="text-align:center;"><div class="num r-blue-num">200+</div><div class="label" style="color:rgba(255,255,255,0.7);">Client Projects</div></div>
+                    <div style="text-align:center;"><div class="num r-blue-num">95%</div><div class="label" style="color:rgba(255,255,255,0.7);">Client Satisfaction</div></div>
+                </div>
+            </div>
         </div>
     </div>
-</div></div></section>
+</section>
+
+<!-- Mission Vision -->
+<section class="r-section-alt">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:50px;" data-aos="fade-up">
+            <span class="section-tag" style="color:#2563eb;font-weight:600;">Who We Are</span>
+            <h2 style="font-size:2.2rem;color:#0f172a;">Mission, vision, and how we operate</h2>
+        </div>
+        <div class="grid-3">
+            <div class="r-card" data-aos="fade-up">
+                <div class="r-icon"><i class="fas fa-bullseye"></i></div>
+                <h3>Mission</h3>
+                <p>Help organizations make smarter decisions through authentic African data and research excellence. We blend human insight with analytics you can trust.</p>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="r-icon"><i class="fas fa-eye"></i></div>
+                <h3>Vision</h3>
+                <p>Become Africa's preferred partner for data-driven growth, innovation, and social impact by delivering dependable fieldwork in every engagement.</p>
+            </div>
+            <div class="r-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="r-icon"><i class="fas fa-cogs"></i></div>
+                <h3>How We Work</h3>
+                <p>Method-neutral designs, regional field leaders, and transparent updates from briefing to delivery. Every study is right-sized for your timelines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Approach -->
+<section class="r-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:50px;" data-aos="fade-up">
+            <span class="section-tag" style="color:#2563eb;font-weight:600;">Method Frameworks</span>
+            <h2 style="font-size:2.2rem;color:#0f172a;">Our Approach</h2>
+        </div>
+        <p style="color:#64748b;max-width:700px;margin:0 auto 50px;text-align:center;font-size:1.05rem;">We do not start with a preferred method. We start with the decision you need to make, then match it to the audience, markets, and timelines.</p>
+        <div class="grid-2" style="gap:30px;">
+            <div data-aos="fade-right" style="background:#f8fafc;padding:30px;border-radius:12px;border:1px solid #e2e8f0;">
+                <h3 style="color:#2563eb;margin-bottom:20px;"><i class="fas fa-calculator"></i> Quantitative</h3>
+                <ul class="r-list">
+                    <li><i class="fas fa-check"></i>CATI (Computer-Assisted Telephone)</li>
+                    <li><i class="fas fa-check"></i>CAWI (Online Surveys)</li>
+                    <li><i class="fas fa-check"></i>CAPI / PAPI (Face-to-Face)</li>
+                    <li><i class="fas fa-check"></i>Mobile / SMS Surveys</li>
+                    <li><i class="fas fa-check"></i>Random In-Home Sampling</li>
+                    <li><i class="fas fa-check"></i>Mystery Shopper</li>
+                </ul>
+            </div>
+            <div data-aos="fade-left" style="background:#f8fafc;padding:30px;border-radius:12px;border:1px solid #e2e8f0;">
+                <h3 style="color:#2563eb;margin-bottom:20px;"><i class="fas fa-comments"></i> Qualitative</h3>
+                <ul class="r-list">
+                    <li><i class="fas fa-check"></i>Focus Groups</li>
+                    <li><i class="fas fa-check"></i>In-Depth Interviews</li>
+                    <li><i class="fas fa-check"></i>Ethnographic Research</li>
+                    <li><i class="fas fa-check"></i>Case Studies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

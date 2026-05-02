@@ -49,6 +49,11 @@
         }
         .page-header-sub h1 { font-size: 2.8rem; color: var(--white); margin-bottom: 12px; }
         .page-header-sub p { color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 550px; margin: 0 auto; }
+        .footer { background: #1e3a8a !important; }
+        .footer a { color: rgba(255,255,255,0.75) !important; }
+        .footer a:hover { color: #fff !important; }
+        .footer h4 { color: #fff !important; }
+        .footer p { color: rgba(255,255,255,0.7) !important; }
     </style>
     {% block extra_css %}{% endblock %}
 </head>
@@ -57,8 +62,7 @@
         <div class="container">
             <a href="/{{ route_prefix }}" class="nav-logo">
                 <img src="{{ url_for('static', filename='images/' + logo_file) }}" alt="{{ company_name }}" 
-                     onerror="this.style.display='none'" style="height:auto; max-height:120px;">
-                <span style="font-size:1.1rem; color:#1a1a2e;">{{ company_name }}</span>
+                     style="height:auto; max-height:120px; width:auto;">
             </a>
             <ul class="nav-links">
                 <li><a href="/{{ route_prefix }}">Home</a></li>
@@ -75,13 +79,13 @@
 
     {% block content %}{% endblock %}
 
-    <footer class="footer">
+    <footer class="footer{% if route_prefix == 'research' %} research-footer{% endif %}">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <span style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);font-weight:700;">{{ company_name }}</span>
+                    <img src="{{ url_for('static', filename='images/' + logo_file) }}" alt="{{ company_name }}" style="height:52px; width:auto; margin-bottom:12px;">
                     <p>{{ company_description }}</p>
-                    <p style="margin-top:8px;"><a href="/" style="color:var(--accent);text-decoration:none;">← Back to Lightline Investment Group</a></p>
+                    <p style="margin-top:8px;"><a href="/" style="color:var(--sub-accent);text-decoration:none;">← Back to Lightline Investment Group</a></p>
                 </div>
                 <div>
                     <h4>Quick Links</h4>
