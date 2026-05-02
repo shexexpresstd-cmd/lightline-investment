@@ -185,7 +185,7 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if not session.get('admin_logged_in'):
-            return redirect(url_for('admin_login'))
+            return redirect('/admin')
         return f(*args, **kwargs)
     return decorated_function
 
@@ -208,7 +208,7 @@ def admin_login():
 @app.route('/admin/logout')
 def admin_logout():
     session.pop('admin_logged_in', None)
-    return redirect(url_for('admin_login'))
+    return redirect('/admin')
 
 @app.route('/admin/dashboard')
 @login_required
