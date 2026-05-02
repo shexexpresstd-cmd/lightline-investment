@@ -3,7 +3,8 @@ Lightline Investment Group - Multi-Site Flask Application
 Parent Company + 5 Subsidiary Websites
 """
 
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session
+from functools import wraps
 from datetime import datetime
 import sqlite3
 import os
@@ -174,14 +175,43 @@ def insert_default_data(conn):
     cursor.executemany('INSERT INTO stats (label, value, suffix, icon, order_num) VALUES (?, ?, ?, ?, ?)', stats)
 
 # ============================================================
+# ADMIN AUTHENTICATION
+# ============================================================
+
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME', 'admin')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', 'lightline2024')
+
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not session.get('admin_logged_in'):
+            return redirect(url_for('admin_login'))
+        return f(*args, **kwargs)
+    return decorated_function
+
+# ============================================================
 # ADMIN ROUTES
 # ============================================================
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin_login():
-    return render_template('admin/login.html')
+    error = None
+    if request.method == 'POST':
+        username = request.form.get('username', '')
+        password = request.form.get('password', '')
+        if username == ADMIN_USERNAME and password == ADMIN_PASSWORD:
+            session['admin_logged_in'] = True
+            return redirect(url_for('admin_dashboard'))
+        error = 'Invalid username or password'
+    return render_template('admin/login.html', error=error)
+
+@app.route('/admin/logout')
+def admin_logout():
+    session.pop('admin_logged_in', None)
+    return redirect(url_for('admin_login'))
 
 @app.route('/admin/dashboard')
+@login_required
 def admin_dashboard():
     with get_db_connection() as conn:
         cursor = conn.cursor()
@@ -206,6 +236,7 @@ def admin_dashboard():
                          active_services=active_services)
 
 @app.route('/admin/contacts')
+@login_required
 def admin_contacts():
     with get_db_connection() as conn:
         cursor = conn.cursor()
@@ -214,6 +245,7 @@ def admin_contacts():
     return render_template('admin/contacts.html', contacts=contacts)
 
 @app.route('/admin/contacts/<int:contact_id>/status', methods=['POST'])
+@login_required
 def update_contact_status(contact_id):
     data = request.get_json()
     with get_db_connection() as conn:
@@ -221,6 +253,7 @@ def update_contact_status(contact_id):
     return jsonify({'success': True})
 
 @app.route('/admin/services', methods=['GET', 'POST'])
+@login_required
 def admin_services():
     with get_db_connection() as conn:
         cursor = conn.cursor()
@@ -239,6 +272,7 @@ def admin_services():
     return render_template('admin/services.html', services=services)
 
 @app.route('/admin/portfolio', methods=['GET', 'POST'])
+@login_required
 def admin_portfolio():
     with get_db_connection() as conn:
         cursor = conn.cursor()
@@ -256,6 +290,7 @@ def admin_portfolio():
     return render_template('admin/portfolio.html', portfolio=portfolio)
 
 @app.route('/admin/subscribers')
+@login_required
 def admin_subscribers():
     with get_db_connection() as conn:
         cursor = conn.cursor()
